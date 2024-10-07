@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "66e83331-bd54-4154-b961-28695ee5f495",
+		"name": "Job Tsf App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "218699"
+	},
+	"item": [
+		{
+			"name": "Bank Account Management",
+			"item": [
+				{
+					"name": "Create Account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MjgyODAxODAsImV4cCI6MTcyODI5ODE4MH0.7NUMl5ey5mQUSUXSoqskhzDEjpeni7Aro3tOY58InTI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accountHolderName\": \"VR Keshava\",\r\n    \"initialBalance\": 1000.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9090/accounts/createAccount"
+					},
+					"response": []
+				},
+				{
+					"name": "GetAccountByAccoutId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MjgyODAxODAsImV4cCI6MTcyODI5ODE4MH0.7NUMl5ey5mQUSUXSoqskhzDEjpeni7Aro3tOY58InTI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9090/accounts/1"
+					},
+					"response": []
+				},
+				{
+					"name": "UpgateByIdAccount",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MjgyODAxODAsImV4cCI6MTcyODI5ODE4MH0.7NUMl5ey5mQUSUXSoqskhzDEjpeni7Aro3tOY58InTI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9090/accounts/1"
+					},
+					"response": []
+				},
+				{
+					"name": "SuspendAccount",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MjgyODAxODAsImV4cCI6MTcyODI5ODE4MH0.7NUMl5ey5mQUSUXSoqskhzDEjpeni7Aro3tOY58InTI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9090/accounts/2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaction Management",
+			"item": [
+				{
+					"name": "Make Transaction",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MjgyODAxODAsImV4cCI6MTcyODI5ODE4MH0.7NUMl5ey5mQUSUXSoqskhzDEjpeni7Aro3tOY58InTI",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accountId\": \"1\",\r\n    \"amount\": 500.00,\r\n    \"type\": \"CREDIT\",\r\n    \"transactionDate\": \"2024/10/09\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9090/transactions"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Transaction History",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MjgyODAxODAsImV4cCI6MTcyODI5ODE4MH0.7NUMl5ey5mQUSUXSoqskhzDEjpeni7Aro3tOY58InTI",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accountId\": \"1\",\r\n    \"page\": 1,\r\n    \"size\": 10,\r\n    \"type\": \"CREDIT\",\r\n    \"startDate\": \"2024/10/09\",\r\n    \"endDate\": \"2024/10/11\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9090/transactions/make"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
